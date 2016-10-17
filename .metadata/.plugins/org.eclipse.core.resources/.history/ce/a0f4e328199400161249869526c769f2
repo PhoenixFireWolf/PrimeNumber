@@ -1,0 +1,55 @@
+import java.sql.Timestamp;
+import java.util.*;
+
+public class Main {
+	int primeNumbers[];
+	static List<Integer> primes = new ArrayList<Integer>();
+	
+	public static void main(String[] args) {
+		int number = 12;
+		
+		if (isPrime(number) == true)
+		System.out.println("The number " + number + " is prime");
+		else System.out.println("The number " + number + " is not prime");
+		
+		java.util.Date date1= new java.util.Date();
+		System.err.println("start at " + new Timestamp(date1.getTime()));
+		
+		
+		primeList(10, 100000000);
+		
+		java.util.Date date2= new java.util.Date();
+		System.err.println("method done at " + new Timestamp(date2.getTime()));
+		
+		//System.out.println(primes);
+		
+		String string = primes.toString();
+		
+		System.out.println(string);
+		
+		java.util.Date date3= new java.util.Date();
+		System.err.println("ended at " + new Timestamp(date3.getTime()));
+	}
+	
+	static boolean isPrime(int number) {
+	    //check if n is a multiple of 2
+	    if (number%2 == 0) return false;
+	    //if not, then just check the odds
+	    for(int i = 3; i*i <= number; i += 2) {
+	        if(number%i == 0)
+	            return false;
+	    }
+	    return true;
+	}
+	
+	static List<Integer> primeList(int lowerNumber, int upperNumber){
+	    
+		for (int number = lowerNumber; number <= upperNumber; number++){
+			if (isPrime(number) == true){
+				primes.add(number);
+			}
+		}
+
+		return primes;
+	}
+}

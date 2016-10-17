@@ -1,0 +1,26 @@
+
+public class Main {
+	public static void main(String[] args) {
+		PrimeCalculator(13);
+	}
+	
+	public static void PrimeCalculator(int number){
+		String answer = "Number is Prime";
+		if (number%2 == 0){
+			answer = "Number not Prime";
+		}
+		else if (number%3 == 0){
+			answer = "Number is Prime";
+		}
+		else if (number%5 == 0){
+			answer = "Number is Prime";
+		}
+		else if (number%7 == 0){
+			answer = "Number is Prime";
+		}
+		else if(number%11 == 0){
+			answer = "Number is Prime";
+		}
+		System.out.println(answer);
+	}
+}

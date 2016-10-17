@@ -1,0 +1,14 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+	public static void main(String[] args) {
+		PrimeCalculator(100);
+	}
+	
+	public static void PrimeCalculator(int max){
+		ArrayList<int> primeNumbers = new ArrayList<int>();
+		primeNumbers.add(max);
+		System.out.println(primeNumbers);
+	}
+}

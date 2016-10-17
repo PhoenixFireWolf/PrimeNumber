@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Main {
+	int primeNumbers[];
+	static List<Integer> primes = new ArrayList<Integer>();
+	
+	public static void main(String[] args) {
+		int number = 12;
+		
+		if (isPrime(number) == true)
+		System.out.println("The number " + number + " is prime");
+		else System.out.println("The number " + number + " is not prime");
+		
+		System.out.println(primeList(10, 50));
+	}
+	
+	static boolean isPrime(int number) {
+	    //check if n is a multiple of 2
+	    if (number%2 == 0) return false;
+	    //if not, then just check the odds
+	    for(int i = 3; i*i <= number; i += 2) {
+	        if(number%i == 0)
+	            return false;
+	    }
+	    return true;
+	}
+	
+	static List<Integer> primeList(int lowerNumber, int upperNumber){
+	    
+		for (int number = lowerNumber; number <= upperNumber; number++){
+			
+			if (number%2 != 0) primes.add(number);
+			
+			for(int i=3; i*i <= number; i+=2) {
+				if(number%i != 0)
+					primes.add(number);
+			}
+		}
+		return primes;
+	}
+}
